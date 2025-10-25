@@ -75,7 +75,7 @@ The API will be available at `http://localhost:8000`
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/fake-news-detection-app.git
+git clone https://github.com/justiceO21/fake-news-detection-app.git
 cd fake-news-detection-app
 ```
 
@@ -104,9 +104,9 @@ uvicorn app.main:app --reload
 If you want to build the Docker image yourself:
 
 ```bash
-git clone https://github.com/<your-username>/fake_news_app.git
-cd fake_news_app
-docker build -t fake-news-api .
+git clone https://github.com/justiceO21/fake-news-detector-app.git
+cd fake-news-detector-app
+docker build -t fake-news-detector-app .
 docker run -d -p 8000:8000 fake-news-api
 ```
 
