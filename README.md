@@ -17,7 +17,7 @@ The backend supports multiple models (`kbap` and `quab`) with flexible vectoriza
 ## Features
 
 - Predict whether a news article is Factual or Fake.
-- Supports Logistic Regression (`quab`) and Naive Bayes (`kbap`) models.
+- Supports Logistic Regression (`kbap`) and Naive Bayes (`quab`) models.
 - Flexible text preprocessing including:
   - Lowercasing
   - Punctuation removal
@@ -51,7 +51,7 @@ fake_news_app/
 │
 ├── data/
 │   ├── fake_news.cvs          # Data for training the model
-│   └── quab.pkl
+│   
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
@@ -64,8 +64,8 @@ fake_news_app/
 Run the API directly using the pre-built Docker image without cloning the repository:
 
 ```bash
-docker pull kwabenaowusu/fake-news-api:v1.0
-docker run -d -p 8000:8000 kwabenaowusu/fake-news-api:v1.0
+docker pull kwabenaowusu/fake-news-detector-api:v1.0
+docker run -d -p 8000:8000 kwabenaowusu/fake-news-detector-api:v1.0
 ```
 
 The API will be available at `http://localhost:8000`
@@ -75,8 +75,8 @@ The API will be available at `http://localhost:8000`
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/fake_news_app.git
-cd fake_news_app
+git clone https://github.com/<your-username>/fake-news-detection-app.git
+cd fake-news-detection-app
 ```
 
 2. Create a virtual environment (optional but recommended):
@@ -128,7 +128,7 @@ Response:
 ```json
 {
   "prediction": "Factual News",
-  "confidence": 0.92
+  "qualityScore / confidence": 92%
 }
 ```
 
@@ -138,8 +138,8 @@ The API supports two trained models:
 
 | Model Name | Algorithm | Description |
 |------------|-----------|-------------|
-| quab | Logistic Regression | Best performing model, high accuracy |
-| kbap | Naive Bayes | Lightweight, fast inference |
+| kbap | Logistic Regression | Best performing model, high accuracy |
+| quab | Naive Bayes | Lightweight, fast inference |
 
 Use the `model` field in your request to select which model to use.
 
