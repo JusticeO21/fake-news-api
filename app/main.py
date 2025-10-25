@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import importlib
 import pkgutil
 import app.routes as routes_pkg
+from mangum import Mangum
 
 app = FastAPI(
     title="Fake News Detector API",
@@ -28,3 +29,5 @@ for _, module_name, _ in pkgutil.iter_modules(routes_pkg.__path__):
 @app.get("/")
 def root():
     return {"message": "Detect fake news with unmatched accuracy"}
+
+handler = Mangum(app)
